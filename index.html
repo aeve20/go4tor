@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>go4tor — ניהול תורים חכם לעסקים | חודש ראשון חינם</title>
+<meta name="description" content="go4tor זו לא עוד מערכת תורים — אנחנו משיקים לך את העסק. הלקוחות קובעים תור לבד בלי אפליקציה, ואנחנו דואגים שישתמשו: ליווי הטמעה מלא, כרזה מעוצבת עם הלוגו שלך וקוד QR, וסרטון תדמית לרשתות. חודש ראשון חינם.">
+<meta name="theme-color" content="#0C2F52">
+<meta property="og:title" content="go4tor — ניהול תורים חכם לעסקים">
+<meta property="og:description" content="לא רק מערכת תורים — שותף שמשיק לך את העסק. הטמעה, כרזה מעוצבת עם QR וסרטון תדמית. חודש ראשון חינם.">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/go4tor-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══ GOOGLE ADS / ANALYTICS (רשות) — הדבק כאן את תגית gtag.js כשתרצה מעקב ═══ -->
+
+<style>
+:root{
+  --paper:#F6F4F0;
+  --card:#FFFFFF;
+  --navy:#123E6F;
+  --navy-deep:#0C2F52;
+  --navy-2:#1B5490;
+  --ink:#1B2838;
+  --ink-soft:#5A6b7d;
+  --orange:#FD7E13;
+  --orange-2:#FE6B0B;
+  --orange-mist:#FFF0E0;
+  --teal:#198AB2;
+  --blue:#1B6FB8;
+  --line:#E7E1D8;
+  --shadow:0 2px 4px rgba(12,47,82,.05),0 16px 36px -16px rgba(12,47,82,.22);
+  --shadow-lg:0 6px 12px rgba(12,47,82,.07),0 34px 64px -22px rgba(12,47,82,.34);
+  --r:18px;--r-lg:28px;--wrap:1140px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Rubik',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.round{font-family:'Varela Round',system-ui,sans-serif;font-weight:400;line-height:1.22;margin:0}
+p{margin:0}a{color:inherit}img{max-width:100%;display:block}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:22px}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Rubik',sans-serif;font-size:13px;font-weight:600;letter-spacing:.03em;color:var(--orange-2);background:var(--orange-mist);padding:7px 15px;border-radius:999px;margin-bottom:18px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.on-dark .eyebrow{background:rgba(253,126,19,.18);color:#FFB877}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Rubik',sans-serif;font-size:17px;font-weight:600;padding:15px 30px;border-radius:14px;border:2px solid transparent;text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 12px 26px -10px rgba(253,126,19,.8)}
+.btn-orange:hover{background:var(--orange-2);transform:translateY(-2px)}
+.btn-wa{background:#1FA855;color:#fff;box-shadow:0 12px 26px -10px rgba(31,168,85,.7)}
+.btn-wa:hover{background:#178943;transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5)}
+.btn-ghost-l{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn-ghost-l:hover{border-color:var(--orange);color:var(--orange-2)}
+.btn:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.btn svg{width:19px;height:19px;fill:currentColor}
+
+.nav{position:sticky;top:0;z-index:60;background:rgba(246,244,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:42px;width:auto}
+.nav .btn{padding:11px 22px;font-size:15px}
+
+/* ───────── hero ───────── */
+.hero{position:relative;overflow:hidden;background:var(--navy-deep);color:#EAF2FA;padding:60px 0 72px}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(circle at 82% 8%,rgba(253,126,19,.22),transparent 46%),
+  radial-gradient(circle at 12% 88%,rgba(25,138,178,.20),transparent 48%),
+  linear-gradient(160deg,#0C2F52,#123E6F 70%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.hero h1{font-size:clamp(30px,4.6vw,52px);color:#fff;letter-spacing:-.01em}
+.hero h1 span{color:var(--orange)}
+.hero-sub{font-size:clamp(17px,1.9vw,20px);color:#B9CBDD;margin-top:20px;max-width:38ch}
+.hero-sub b{color:#fff;font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}
+.hero-trust{margin-top:22px;font-size:14px;color:#8FA6BC}
+.hero-trust b{color:#FFB877;font-weight:600}
+
+/* signature: filling calendar */
+.slotcard{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);padding:26px 24px 24px;color:var(--ink)}
+.slotcard-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.slotcard-head strong{font-family:'Varela Round',sans-serif;font-size:19px}
+.slotcard-head span{font-size:13px;color:var(--ink-soft)}
+.slot-day{font-size:12.5px;color:var(--ink-soft);margin:16px 0 12px;letter-spacing:.03em;font-weight:500}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.slot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 15px;border-radius:13px;border:1.5px solid var(--orange-mist);background:var(--orange-mist);font-size:15px;font-weight:500;color:#B5641A;transition:background .5s,border-color .5s,color .5s}
+.slot i{font-style:normal;font-size:12px;font-weight:500;opacity:.8}
+.slot.is-taken{background:#F1F4F7;border-color:#F1F4F7;color:#AEB9C4}
+.slot.is-taken i{text-decoration:line-through}
+.slot.is-open{background:var(--navy);border-color:var(--navy);color:#fff;animation:breathe 2.6s ease-in-out infinite}
+.slot.is-open i{opacity:1;color:#FFB877}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(253,126,19,.55)}50%{box-shadow:0 0 0 12px rgba(253,126,19,0)}}
+.slot-foot{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--ink-soft);text-align:center}
+.slot-foot b{color:var(--orange-2);font-weight:600}
+
+/* ───────── differentiator band (THE bidul) ───────── */
+.diff{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.diff-head{text-align:center;max-width:680px;margin:0 auto 40px}
+.diff-head h2{font-size:clamp(25px,3.3vw,36px);color:var(--navy)}
+.diff-head h2 span{color:var(--orange-2)}
+.diff-head p{color:var(--ink-soft);margin-top:12px;font-size:18px}
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.dcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;text-align:center;position:relative;transition:transform .2s ease,box-shadow .2s ease}
+.dcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.dcard .dic{width:56px;height:56px;margin:0 auto 16px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--orange),var(--orange-2))}
+.dcard .dic svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.dcard.teal .dic{background:linear-gradient(150deg,var(--teal),var(--blue))}
+.dcard.navy .dic{background:linear-gradient(150deg,var(--navy-2),var(--navy))}
+.dcard.blue .dic{background:linear-gradient(150deg,var(--blue),var(--teal))}
+.dcard h3{font-size:18px;color:var(--navy);margin-bottom:8px}
+.dcard p{color:var(--ink-soft);font-size:14.5px}
+
+/* ───────── sections ───────── */
+.sec{padding:80px 0}
+.sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+.sec-head h2{font-size:clamp(26px,3.3vw,37px);color:var(--navy)}
+.sec-head h2 span{color:var(--orange-2)}
+.sec-head p{color:var(--ink-soft);margin-top:14px;font-size:18px}
+
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;gap:16px;transition:transform .2s,box-shadow .2s}
+.feat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.feat-ic{flex-shrink:0;width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--orange-mist)}
+.feat-ic svg{width:24px;height:24px;stroke:var(--orange-2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:18px;color:var(--navy);margin-bottom:6px}
+.feat p{color:var(--ink-soft);font-size:15px}
+
+/* poster band */
+.poster-band{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:center}
+.poster-img{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.poster-img img{width:100%;display:block}
+.poster-txt h2{font-size:clamp(24px,3vw,34px);color:var(--navy)}
+.poster-txt h2 span{color:var(--orange-2)}
+.poster-txt p{color:var(--ink-soft);margin-top:14px;font-size:17px}
+.poster-list{list-style:none;padding:0;margin:22px 0 0}
+.poster-list li{display:flex;gap:11px;padding:8px 0;font-size:16px;color:var(--ink)}
+.poster-list li::before{content:"";flex-shrink:0;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--orange-mist) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FE6B0B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/13px no-repeat}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{padding-top:6px}
+.step::before{counter-increment:s;content:counter(s);font-family:'Varela Round',sans-serif;font-size:17px;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;margin-bottom:15px}
+.step h3{font-size:19px;color:var(--navy);margin-bottom:8px}
+.step p{color:var(--ink-soft);font-size:15.5px}
+
+/* launch offer */
+.launch{position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--navy-deep);color:#EAF2FA;padding:52px 46px}
+.launch-bg{position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(253,126,19,.24),transparent 52%),radial-gradient(circle at 8% 92%,rgba(25,138,178,.18),transparent 50%)}
+.launch>*{position:relative;z-index:2}
+.launch h2{font-size:clamp(24px,3vw,34px);color:#fff}
+.launch h2 span{color:var(--orange)}
+.launch>p{color:#B9CBDD;margin-top:14px;font-size:17px;max-width:64ch}
+.launch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.litem{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px}
+.litem .lic{width:44px;height:44px;border-radius:12px;background:rgba(253,126,19,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.litem .lic svg{width:23px;height:23px;stroke:#FFB877;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.litem h3{font-size:17px;color:#fff;margin-bottom:7px}
+.litem p{color:#AFC3D6;font-size:14.5px}
+.launch-note{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:15px;color:#B9CBDD}
+.launch-note b{color:#FFB877}
+
+/* pricing */
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin-inline:auto}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px 30px;text-align:center}
+.pcard.hl{border:2px solid var(--orange);box-shadow:var(--shadow)}
+.pcard h3{font-size:20px;color:var(--navy);margin-bottom:8px}
+.pcard .amount{font-family:'Varela Round',sans-serif;font-size:48px;color:var(--orange-2);line-height:1;margin:10px 0}
+.pcard .amount small{font-size:17px;color:var(--ink-soft);font-weight:500;font-family:'Rubik',sans-serif}
+.pcard p{color:var(--ink-soft);font-size:15px;min-height:46px}
+.pcard .tagline{margin-top:16px;font-weight:600;color:var(--orange-2)}
+.pcard .tagline.muted{color:var(--ink-soft)}
+
+/* faq */
+.faq{max-width:760px;margin-inline:auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:11px;overflow:hidden}
+summary{padding:19px 22px;cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;color:var(--navy)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--orange-2);font-size:22px;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
+
+/* contact */
+.contact{position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--navy-deep);color:#EAF2FA;padding:54px 46px;text-align:center}
+.contact-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(253,126,19,.24),transparent 58%)}
+.contact>*{position:relative;z-index:2}
+.contact h2{font-size:clamp(25px,3.2vw,36px);color:#fff}
+.contact h2 span{color:var(--orange)}
+.contact p{color:#B9CBDD;margin-top:14px;font-size:18px;max-width:46ch;margin-inline:auto}
+.contact-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+.contact-alt{margin-top:22px;font-size:15px;color:#8FA6BC}
+.contact-alt a{color:#FFB877;text-decoration:none;font-weight:500}
+
+/* footer */
+.foot{padding:44px 0 108px;text-align:center;color:var(--ink-soft);font-size:14.5px;background:var(--card);border-top:1px solid var(--line)}
+.foot img{height:44px;width:auto;margin:0 auto 14px}
+.foot a{color:var(--orange-2);text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot .company{margin-top:14px;font-size:13px;opacity:.85}
+
+.sticky{position:fixed;inset-inline:0;bottom:0;z-index:70;display:none;gap:10px;padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;padding:14px 10px;font-size:16px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-sub{max-width:none}
+  .diff-grid{grid-template-columns:1fr 1fr}
+  .feats,.steps,.launch-grid{grid-template-columns:1fr 1fr}
+  .poster-band{grid-template-columns:1fr;gap:28px}
+  .poster-img{max-width:360px;margin-inline:auto}
+}
+@media(max-width:640px){
+  body{font-size:16.5px}
+  .hero{padding:44px 0 54px}
+  .sec,.diff{padding:54px 0}
+  .diff-grid,.feats,.steps,.launch-grid,.pricing{grid-template-columns:1fr}
+  .pricing{max-width:400px}
+  .nav .btn{display:none}
+  .sticky{display:flex}
+  .foot{padding-bottom:118px}
+  .launch,.contact{padding:36px 24px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+.video-sec{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.video-wrap{display:grid;grid-template-columns:1fr .78fr;gap:48px;align-items:center;max-width:900px;margin-inline:auto}
+.video-copy h2{font-size:clamp(24px,3vw,34px);color:var(--navy)}
+.video-copy h2 span{color:var(--orange-2)}
+.video-copy p{color:var(--ink-soft);margin-top:14px;font-size:17px}
+.video-copy .vsub{margin-top:18px;font-size:15px;color:var(--ink-soft);display:flex;align-items:center;gap:9px}
+.video-copy .vsub::before{content:"";width:34px;height:34px;flex-shrink:0;border-radius:10px;background:var(--orange-mist) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FE6B0B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M10 8l6 4-6 4z' fill='%23FE6B0B'/%3E%3C/svg%3E") center/18px no-repeat}
+.phone{--pw:min(264px,72vw);position:relative;display:block;width:var(--pw);height:calc(var(--pw) * 19 / 9);margin-inline:auto;background:#0A2440;border-radius:36px;padding:10px;box-shadow:var(--shadow-lg),0 0 0 2px rgba(12,47,82,.12)}
+.phone::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:44%;height:18px;background:#0A2440;border-radius:0 0 13px 13px;z-index:6}
+.phone-screen{position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:#0A2440;cursor:pointer;display:block;border:0;padding:0;-webkit-appearance:none;font-family:inherit}
+.phone-screen .thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.phone-screen .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(253,126,19,.96);display:flex;align-items:center;justify-content:center;z-index:3;transition:transform .2s ease;box-shadow:0 8px 24px -6px rgba(253,126,19,.7)}
+.phone-screen:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.phone-screen .play::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;margin-inline-start:4px}
+.phone-screen .dur{position:absolute;bottom:16px;inset-inline:0;text-align:center;color:#fff;font-size:13px;font-weight:500;z-index:3;text-shadow:0 1px 4px rgba(0,0,0,.55)}
+.phone-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
+.phone-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#123E6F,#0C2F52);color:#8FA6BC;font-size:14px;text-align:center;padding:20px}
+@media(max-width:760px){.video-wrap{grid-template-columns:1fr;gap:30px}.video-copy{text-align:center}.video-copy .vsub{justify-content:center}}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="assets/go4tor-logo.png" alt="go4tor"></a>
+    <a class="btn btn-orange" href="#contact">חודש ראשון חינם</a>
+  </div>
+</nav>
+
+<header class="hero on-dark" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">ניהול תורים חכם לעסקים</span>
+      <h1>לא רק מערכת תורים.<br><span>אנחנו משיקים לך את העסק.</span></h1>
+      <p class="hero-sub">הלקוחות קובעים תור לבד, בלי אפליקציה להוריד — ואנחנו דואגים שהם באמת ישתמשו. <b>ליווי הטמעה מלא, כרזה מעוצבת עם הלוגו שלך וקוד QR, וסרטון תדמית לרשתות</b> להשקת האפליקציה שלך.</p>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="#contact">רוצה להתחיל — חודש חינם</a>
+        <a class="btn btn-ghost" href="#why">למה go4tor</a>
+      </div>
+      <p class="hero-trust">כבר רץ בעסקים אמיתיים · <b>בלי התחייבות</b> · הקמה מלאה בשבילך</p>
+    </div>
+    <div class="slotcard" aria-label="הדגמה: יומן תורים מתמלא">
+      <div class="slotcard-head"><strong>היומן שלך, מחר</strong><span>יום ה׳</span></div>
+      <div class="slot-day">08:00 — 14:00</div>
+      <div class="slots" id="slots"></div>
+      <div class="slot-foot">הלקוחות תפסו <b id="cnt">0</b> תורים — בזמן שעבדת.</div>
+    </div>
+  </div>
+</header>
+
+<!-- THE differentiator, immediately -->
+<section class="diff sec" id="why">
+  <div class="wrap">
+    <div class="diff-head rv">
+      <span class="eyebrow">מה שאין באפליקציות האחרות</span>
+      <h2>כולם נותנים לך מערכת. <span>אנחנו נותנים לך לקוחות.</span></h2>
+      <p>ההבדל בין go4tor למתחרים הוא לא עוד כפתור — זה מה שקורה אחרי ההרשמה. אנחנו לא נעלמים; אנחנו דואגים שהמערכת באמת תעבוד בעסק שלך.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="dcard orange rv">
+        <div class="dic"><svg viewBox="0 0 24 24"><path d="M12 3l2 4 4.5.6-3.2 3.1.8 4.4L12 13l-4 2.1.8-4.4L5.6 7.6 10 7z" opacity="0"/><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>הטמעה וליווי צמוד</h3>
+        <p>אנחנו מלמדים אותך ואת הלקוחות שלך להשתמש, צעד־צעד — עד שהמערכת רצה מעצמה.</p>
+      </div>
+      <div class="dcard teal rv">
+        <div class="dic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></div>
+        <h3>כרזה מעוצבת עם QR</h3>
+        <p>כרזה מקצועית עם הלוגו שלך וקוד QR שמוביל להזמנת תור — מוכנה לתלייה ולרשתות.</p>
+      </div>
+      <div class="dcard navy rv">
+        <div class="dic"><svg viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0 0 6"/><rect x="3" y="8" width="12" height="6" rx="1"/><path d="M18 5l3-2v18l-3-2"/></svg></div>
+        <h3>סרטון תדמית לרשתות</h3>
+        <p>סרטון להשקת האפליקציה שלך ברשתות החברתיות — כדי שהלקוחות ידעו ויתחילו לקבוע לבד.</p>
+      </div>
+      <div class="dcard blue rv">
+        <div class="dic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>תמיכה שלא נעלמת</h3>
+        <p>אנחנו זמינים בוואטסאפ לכל שאלה, גם חודשים אחרי ההקמה. שותף אמיתי, לא ספק חד־פעמי.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec video-sec">
+  <div class="wrap">
+    <div class="video-wrap">
+      <div class="video-copy rv">
+        <span class="eyebrow">רואים במו העיניים</span>
+        <h2>רוצה לראות איך מזמינים תור — <span>וכמה זה פשוט?</span></h2>
+        <p>35 שניות, עם הסבר קולי, שמראות בדיוק מה הלקוח שלך עובר: מסריקת הקוד ועד תור מאושר. בלי אותיות קטנות — פשוט תראה.</p>
+        <div class="vsub">צולם ממערכת אמיתית שרצה בעסק</div>
+      </div>
+      <div class="phone rv">
+        <button class="phone-screen" id="vidBtn" data-yt="fVkspRxG8Vo" aria-label="נגן את סרטון ההסבר">
+          <span class="phone-fallback">לחצו לצפייה</span>
+          <span class="play"></span>
+          <span class="dur">0:35 · הסבר קולי</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">המערכת עצמה</span><h2>כל מה שצריך כדי לנהל את היום — <span>במסך אחד</span></h2><p>נגיש מהטלפון הנייד שלך, מטאבלט של העסק או מהמחשב. בעברית מלאה, בלי אפליקציה להוריד.</p></div>
+    <div class="feats">
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>עמוד הזמנה ממותג</h3><p>הלוגו שלך, השירותים, המחירים ושעות הפעילות. נראה כמו אפליקציה של העסק — והלקוח קובע בשתי לחיצות.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 10h3M8 14h6"/></svg></div><div><h3>יומן חכם</h3><p>כל התורים של היום במסך אחד. אישור, שינוי או ביטול בלחיצה — גם באמצע יום עמוס.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></div><div><h3>תזכורות אוטומטיות</h3><p>הלקוח מקבל תזכורת לפני התור — פחות ששוכחים, פחות כיסא ריק, פחות כסף שהולך לאיבוד.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 4.5a3.2 3.2 0 0 1 0 6.3"/></svg></div><div><h3>כרטיס לקוח</h3><p>היסטוריית ביקורים, השירות הקבוע, והלקוחות הכי שווים. לקוח בעייתי? אפשר לחסום.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>ניווט וביקורות</h3><p>כפתור ניווט ישיר לעסק וכפתור לביקורת בגוגל — כדי שהדירוג שלך יעלה מעצמו.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 18z"/></svg></div><div><h3>וואטסאפ בלחיצה</h3><p>לקוח שצריך משהו חריג מגיע ישר אליך, בלי לחפש מספר. כל השאר קובעים לבד.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="poster-band">
+      <div class="poster-img rv"><img src="assets/demo-poster-web.jpg" alt="דוגמה לכרזת QR מעוצבת שהעסק מקבל"></div>
+      <div class="poster-txt rv">
+        <span class="eyebrow">כלול בשירות</span>
+        <h2>כרזה מעוצבת — <span>על שם העסק שלך</span></h2>
+        <p>אנחנו מפיקים עבורך כרזה מקצועית עם הלוגו שלך וקוד QR שמוביל ישירות להזמנת תור. הלקוח סורק מהטלפון — וקובע את התור הבא לפני שהוא יוצא מהדלת.</p>
+        <ul class="poster-list">
+          <li>מעוצבת בצבעים ובלוגו של העסק שלך</li>
+          <li>קוד QR שמוביל ישר להזמנת תור</li>
+          <li>משמשת גם כמדבקה לעסק וגם כפוסט לרשתות</li>
+          <li>נשלחת אליך מוכנה — בלי עבודה מצדך</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">איך מתחילים</span><h2>שלושה צעדים, <span>ותוך 48 שעות אתה באוויר</span></h2></div>
+    <div class="steps">
+      <div class="step rv"><h3>מדברים</h3><p>שיחה קצרה להבין את העסק, השירותים ושעות הפעילות. זהו החלק שלך.</p></div>
+      <div class="step rv"><h3>אנחנו מקימים</h3><p>בונים ומזינים את הכול, מכינים כרזה וסרטון תדמית, ומעבירים לך מערכת מוכנה.</p></div>
+      <div class="step rv"><h3>משיקים יחד</h3><p>מלווים אותך בהטמעה מול הלקוחות — עד שהתורים מגיעים לבד.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--card);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="launch rv" id="launch">
+      <div class="launch-bg"></div>
+      <span class="eyebrow">מבצע השקה · לתקופה מוגבלת</span>
+      <h2>מצטרפים בתקופת ההשקה — <span>מקבלים חבילת השקה שלמה</span></h2>
+      <p>כדי שהמעבר לתורים אונליין יצליח באמת, אנחנו לא רק נותנים מערכת — אנחנו עוזרים לך להשיק אותה ללקוחות. זה מה שכלול למצטרפים בתקופת ההשקה:</p>
+      <div class="launch-grid">
+        <div class="litem">
+          <div class="lic"><svg viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0 0 6"/><rect x="3" y="8" width="12" height="6" rx="1"/><path d="M18 5l3-2v18l-3-2"/></svg></div>
+          <h3>סרטון תדמית לרשתות</h3>
+          <p>אנחנו מכינים לך סרטון להשקת אפליקציית התורים, מסרטונים קצרים של העסק שאתה מצלם ושולח לנו — בלי צורך שנגיע פיזית, מכל מקום בארץ.</p>
+        </div>
+        <div class="litem">
+          <div class="lic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></div>
+          <h3>כרזה מעוצבת + QR</h3>
+          <p>כרזה עם הלוגו שלך וקוד QR להזמנת תור — לתלייה בעסק, למדבקה ולפרסום ברשתות החברתיות.</p>
+        </div>
+        <div class="litem">
+          <div class="lic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>ליווי הטמעה מלא</h3>
+          <p>נוסח מוכן ללקוחות, הדרכה מסך־מסך, ותמיכה ישירה בוואטסאפ — עד שהמערכת חלק מהשגרה שלך.</p>
+        </div>
+      </div>
+      <p class="launch-note">אתה מצלם קטעים קצרים מהעסק ושולח לנו, <b>ואנחנו הופכים אותם לסרטון תדמית מוכן לרשתות</b> — פתרון פשוט שעובד מכל מקום בארץ, בלי תיאומי צילום ובלי עלויות נסיעה.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">מחיר</span><h2>שקוף. <span>בלי הפתעות.</span></h2></div>
+    <div class="pricing">
+      <div class="pcard hl rv"><h3>מערכת go4tor</h3><div class="amount">79 ₪<small> / חודש</small></div><p>הכול כלול: הקמה, יומן, תזכורות, כרטיס לקוח, כרזה וליווי. בלי דמי הקמה ובלי התחייבות.</p><div class="tagline">חודש ראשון חינם</div></div>
+      <div class="pcard rv"><h3>חבילת השקה</h3><div class="amount">מתנה</div><p>סרטון תדמית לרשתות + כרזה מעוצבת + ליווי הטמעה — למצטרפים בתקופת ההשקה.</p><div class="tagline muted">כלול למצטרפי ההשקה</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--card);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">שאלות נפוצות</span><h2>מה שבעלי עסקים <span>שואלים אותנו</span></h2></div>
+    <div class="faq rv">
+      <details><summary>הלקוחות שלי צריכים להוריד אפליקציה?</summary><p>לא. הם מקבלים קישור, לוחצים עליו, וזה נפתח בטלפון כמו אתר. גם למי שלא מבין בטכנולוגיה — שם, טלפון, ושתי לחיצות.</p></details>
+      <details><summary>אני לא מבין במחשבים. כמה עבודה זה דורש ממני?</summary><p>שיחה אחת. אנחנו מקימים את הכול, מעבירים מערכת מוכנה, ואז עוברים איתך עליה עד שאתה שולט בה. אחרי זה כל מה שאתה עושה זה לפתוח את היומן בבוקר.</p></details>
+      <details><summary>איך גורמים ללקוחות הוותיקים לעבור למערכת?</summary><p>זה בדיוק החלק שאנחנו מלווים בו. נותנים לך נוסח מוכן, מדבקת QR וסרטון תדמית לרשתות, ומסבירים מתי ואיך להזכיר להם. בדרך כלל תוך שבועיים־שלושה רוב הלקוחות כבר קובעים לבד.</p></details>
+      <details><summary>אני לא בגוש דן — עדיין אפשר לקבל את חבילת ההשקה?</summary><p>בהחלט. את סרטון התדמית אנחנו מכינים מקטעים קצרים שאתה מצלם ושולח לנו, כך שהשירות עובד מכל מקום בארץ — בלי שנצטרך להגיע פיזית.</p></details>
+      <details><summary>ואם אני רוצה להפסיק?</summary><p>מפסיקים. אין חוזה ואין קנס יציאה. אתה משלם חודש בחודשו, ואם זה לא מתאים לך — אומר לנו וזהו.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact rv">
+      <div class="contact-bg"></div>
+      <span class="eyebrow">נתחיל?</span>
+      <h2>חודש ראשון חינם, <span>בלי התחייבות</span></h2>
+      <p>שלח הודעה ונחזור אליך באותו יום. השיחה הראשונה היא בירור קצר — בלי מכירות ובלי לחץ.</p>
+      <div class="contact-cta">
+        <a class="btn btn-wa" href="https://wa.me/972505068999?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91-go4tor"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4H8c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.3-.6z"/></svg>וואטסאפ — 050-506-8999</a>
+        <a class="btn btn-navy" href="mailto:a.even7@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>שליחת מייל</a>
+      </div>
+      <p class="contact-alt">או ישירות: <a href="tel:0505068999">050-506-8999</a> · <a href="mailto:a.even7@gmail.com">a.even7@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="assets/go4tor-logo.png" alt="go4tor">
+    <p>ניהול תורים חכם לעסקים · <a href="#top">go4tor.co.il</a></p>
+    <p style="margin-top:8px"><a href="https://wa.me/972505068999">וואטסאפ 050-506-8999</a> · <a href="mailto:a.even7@gmail.com">a.even7@gmail.com</a> · <a href="privacy.html">פרטיות</a></p>
+    <p class="company">מבית <a href="aeven.html">A.Even Management Tools</a> — כלים ניהוליים לעסקים קטנים</p>
+    <p class="company">© <span id="yr"></span> go4tor · כל הזכויות שמורות</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-orange" href="#contact">חודש חינם</a>
+  <a class="btn btn-wa" href="https://wa.me/972505068999">וואטסאפ</a>
+</div>
+
+<script>
+(function(){var times=["08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30"],openIndex=7,box=document.getElementById("slots"),cnt=document.getElementById("cnt");if(!box)return;times.forEach(function(t){var e=document.createElement("div");e.className="slot";e.innerHTML="<span>"+t+"</span><i>פנוי</i>";box.appendChild(e)});var chips=box.querySelectorAll(".slot"),reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches,taken=0;function fill(i){if(i>=chips.length)return;if(i===openIndex){fill(i+1);return}chips[i].classList.add("is-taken");chips[i].querySelector("i").textContent="נתפס";taken++;cnt.textContent=taken;setTimeout(function(){fill(i+1)},240)}chips[openIndex].classList.add("is-open");chips[openIndex].querySelector("i").textContent="פנוי ←";if(reduce){chips.forEach(function(c,i){if(i!==openIndex){c.classList.add("is-taken");c.querySelector("i").textContent="נתפס";taken++}});cnt.textContent=taken}else{setTimeout(function(){fill(0)},700)}})();
+
+(function(){
+  var screen=document.getElementById("vidBtn");
+  if(!screen) return;
+  screen.addEventListener("click",function(){
+    var id=screen.getAttribute("data-yt");
+    if(!id||id==="PLACEHOLDER"){return;}
+    screen.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen title="איך מזמינים תור ב-go4tor"></iframe>';
+    screen.style.cursor="default";
+  });
+})();
+
+(function(){var it=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){it.forEach(function(i){i.classList.add('in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});it.forEach(function(i){io.observe(i);});})();
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

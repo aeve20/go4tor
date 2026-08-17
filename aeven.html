@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A.Even — כלים ניהוליים לעסקים קטנים</title>
+<meta name="description" content="A.Even Management Tools מפתחת כלים ניהוליים לעסקים קטנים בישראל: ניהול תורים (go4tor), מאגר לקוחות, נוכחות עובדים וסידור עבודה, ניהול הכנסות וקבלות לעוסק פטור.">
+<meta name="theme-color" content="#0C2F52">
+<meta property="og:title" content="A.Even — כלים ניהוליים לעסקים קטנים">
+<meta property="og:locale" content="he_IL"><meta property="og:type" content="website">
+<meta property="og:image" content="assets/aeven-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F6F4F0;--card:#FFFFFF;--navy:#123E6F;--navy-deep:#0C2F52;--navy-2:#1B5490;--ink:#1B2838;--ink-soft:#5A6B7D;--orange:#FD7E13;--orange-2:#FE6B0B;--orange-mist:#FFF0E0;--grey:#8A94A0;--line:#E7E1D8;--shadow:0 2px 4px rgba(12,47,82,.05),0 16px 36px -16px rgba(12,47,82,.22);--shadow-lg:0 6px 12px rgba(12,47,82,.07),0 34px 64px -22px rgba(12,47,82,.34);--r:18px;--r-lg:28px;--wrap:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Varela Round',sans-serif;font-weight:400;line-height:1.22;margin:0}
+p{margin:0}a{color:inherit}img{max-width:100%;display:block}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:22px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.03em;color:var(--orange-2);background:var(--orange-mist);padding:7px 15px;border-radius:999px;margin-bottom:18px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.on-dark .eyebrow{background:rgba(253,126,19,.18);color:#FFB877}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Rubik',sans-serif;font-size:17px;font-weight:600;padding:15px 30px;border-radius:14px;border:2px solid transparent;text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .18s,background .18s,color .18s,border-color .18s}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 12px 26px -10px rgba(253,126,19,.8)}
+.btn-orange:hover{background:var(--orange-2);transform:translateY(-2px)}
+.btn-wa{background:#1FA855;color:#fff;box-shadow:0 12px 26px -10px rgba(31,168,85,.7)}
+.btn-wa:hover{background:#178943;transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy-deep);transform:translateY(-2px)}
+.btn-ghost-l{background:transparent;color:var(--navy);border-color:var(--line)}.btn-ghost-l:hover{border-color:var(--orange);color:var(--orange-2)}
+.btn:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.btn svg{width:19px;height:19px;fill:currentColor}
+.nav{position:sticky;top:0;z-index:60;background:rgba(246,244,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand img{height:44px;width:auto}
+.nav .btn{padding:11px 22px;font-size:15px}
+.hero{position:relative;overflow:hidden;padding:60px 0 68px;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 50% 0%,rgba(253,126,19,.10),transparent 52%),radial-gradient(circle at 85% 40%,rgba(18,62,111,.07),transparent 50%)}
+.hero-in{position:relative;z-index:2;max-width:780px;margin-inline:auto}
+.hero-logo{width:min(320px,74vw);margin:0 auto 26px;filter:drop-shadow(0 18px 34px rgba(12,47,82,.16))}
+.hero h1{font-size:clamp(27px,4vw,44px);color:var(--navy)}
+.hero h1 span{color:var(--orange-2)}
+.hero-sub{font-size:clamp(17px,1.9vw,20px);color:var(--ink-soft);margin-top:18px;max-width:42ch;margin-inline:auto}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-top:32px}
+.hero-note{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:26px;font-size:14.5px;color:var(--ink-soft)}
+.hero-note span{display:flex;align-items:center;gap:7px}.hero-note span::before{content:"\2713";color:var(--orange);font-weight:700}
+.sec{padding:76px 0}.sec-alt{background:var(--card)}
+.sec-head{max-width:640px;margin:0 auto 44px;text-align:center}
+.sec-head h2{font-size:clamp(26px,3.3vw,36px);color:var(--navy)}.sec-head h2 span{color:var(--orange-2)}
+.sec-head p{color:var(--ink-soft);margin-top:14px;font-size:18px}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 24px;display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s,border-color .2s}
+.sec-alt .prod{background:var(--paper)}
+.prod:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(253,126,19,.4)}
+.prod-ic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--orange-mist);margin-bottom:16px}
+.prod-ic svg{width:26px;height:26px;stroke:var(--orange-2);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.prod h3{font-size:19px;color:var(--navy);margin-bottom:8px}.prod p{color:var(--ink-soft);font-size:15px;flex:1}
+.prod .pf{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft);font-weight:500;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.prod .pf a{color:var(--orange-2);text-decoration:none;font-weight:600}.prod .pf a:hover{text-decoration:underline}
+.prod.flag{border:2px solid var(--orange);box-shadow:var(--shadow)}
+.prod.flag::after{content:"\05D4\05DE\05D5\05E6\05E8 \05D4\05DE\05D5\05D1\05D9\05DC";position:absolute;top:-12px;inset-inline-start:22px;background:var(--orange);color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px}
+.prod .price b{font-family:'Varela Round',sans-serif;font-size:22px;color:var(--orange-2)}
+.contact{position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--navy-deep);color:#EAF2FA;padding:54px 46px;text-align:center}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(253,126,19,.24),transparent 58%)}
+.contact>*{position:relative;z-index:2}
+.contact h2{font-size:clamp(25px,3.2vw,36px);color:#fff}.contact h2 span{color:var(--orange)}
+.contact p{color:#B9CBDD;margin-top:14px;font-size:18px;max-width:46ch;margin-inline:auto}
+.contact-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+.contact-alt{margin-top:22px;font-size:15px;color:#8FA6BC}.contact-alt a{color:#FFB877;text-decoration:none;font-weight:500}
+.foot{padding:44px 0 40px;text-align:center;color:var(--ink-soft);font-size:14.5px;background:var(--card);border-top:1px solid var(--line)}
+.foot img{height:46px;width:auto;margin:0 auto 14px}.foot a{color:var(--orange-2);text-decoration:none}.foot a:hover{text-decoration:underline}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.prods{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){body{font-size:16.5px}.hero{padding:44px 0 50px}.sec{padding:54px 0}.prods{grid-template-columns:1fr}.nav .btn{display:none}.contact{padding:36px 24px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top"><img src="assets/aeven-mark.png" alt="A.Even"></a>
+  <a class="btn btn-orange" href="https://wa.me/972505068999">דברו איתנו</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap hero-in">
+  <img class="hero-logo" src="assets/aeven-logo.png" alt="A.Even Management Tools">
+  <h1>כלים ניהוליים <span>שפשוט עובדים</span><br>לעסקים קטנים בישראל</h1>
+  <p class="hero-sub">אנחנו בונים מערכות ניהול פשוטות ומותאמות אישית, ומלווים אתכם מההקמה ועד שהמערכת רצה לבד. אתם מנהלים את העסק, אנחנו דואגים לכלים.</p>
+  <div class="hero-cta">
+    <a class="btn btn-wa" href="https://wa.me/972505068999">וואטסאפ — 050-506-8999</a>
+    <a class="btn btn-ghost-l" href="#products">למוצרים שלנו</a>
+  </div>
+  <div class="hero-note"><span>הקמה מלאה בשבילכם</span><span>ליווי אישי</span><span>בעברית מלאה</span></div>
+</div></header>
+
+<section class="sec sec-alt" id="products"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">המוצרים שלנו</span><h2>מערכת אחת <span>לכל צורך בעסק</span></h2><p>כל כלי עומד בפני עצמו, ואפשר גם לשלב כמה יחד. הכול בעברית, נגיש מהטלפון, מהטאבלט או מהמחשב.</p></div>
+  <div class="prods">
+    <div class="prod flag rv"><div class="prod-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="12" cy="14" r="2.4"/></svg></div><h3>ניהול תורים — go4tor</h3><p>הלקוחות קובעים תור לבד, בלי אפליקציה. עמוד ממותג, יומן חכם, תזכורות, כרזת QR וסרטון תדמית. כבר רץ בעסקים אמיתיים.</p><div class="pf"><span class="price"><b>79 ₪</b> / חודש · חודש חינם</span><a href="index.html">לאתר go4tor ←</a></div></div>
+    <div class="prod rv"><div class="prod-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 4.5a3.2 3.2 0 0 1 0 6.3M17.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></div><h3>ניהול מאגר לקוחות</h3><p>כל הלקוחות במקום אחד — היסטוריית ביקורים, פרטי קשר, ימי הולדת ותזכורות להחזרת לקוחות שנעלמו.</p><div class="pf"><span>דברו איתנו לפרטים</span></div></div>
+    <div class="prod rv"><div class="prod-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><h3>נוכחות עובדים וסידור עבודה</h3><p>החתמת נוכחות מבוססת GPS עם אימות נוסף להפחתת גניבת שעות. כולל ממשק סידור עבודה ודוח שעות מפורט לרואה החשבון.</p><div class="pf"><span>דברו איתנו לפרטים</span></div></div>
+    <div class="prod rv"><div class="prod-ic"><svg viewBox="0 0 24 24"><path d="M7 3h10l3 5-8 13L4 8z"/><path d="M7 3l5 5 5-5M4 8h16"/></svg></div><h3>סידור עבודה לארגון גדול</h3><p>מערכת ייעודית לבניית סידור עבודה בהיקף של עד כ-50 עובדים — משמרות, זמינות, החלפות ותצוגה ברורה לכל צוות.</p><div class="pf"><span>דברו איתנו לפרטים</span></div></div>
+    <div class="prod rv"><div class="prod-ic"><svg viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-11"/></svg></div><h3>ניהול הכנסות</h3><p>מעקב פשוט אחרי ההכנסות של העסק, בלי אקסלים מסובכים. תמונת מצב ברורה של מה שנכנס, מתי ומאיפה.</p><div class="pf"><span>דברו איתנו לפרטים</span></div></div>
+    <div class="prod rv"><div class="prod-ic"><svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17l-2.2-1.5L13.6 22 12 20.5 10.4 22 8.2 20.5 6 22z"/><path d="M9 8h6M9 12h6"/></svg></div><h3>קבלות לעוסק פטור</h3><p>קבלות ממוספרות, סכום במילים, חותמת "שולם", גיבוי וייצוא — מותאם בדיוק לדרישות של עוסק פטור בישראל.</p><div class="pf"><span>דברו איתנו לפרטים</span></div></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="contact rv">
+    <span class="eyebrow">בואו נדבר</span><h2>מעניין אתכם? <span>השאירו הודעה</span></h2>
+    <p>ספרו לנו על העסק ונמצא יחד את הכלי שמתאים לכם. בלי מכירות ובלי התחייבות.</p>
+    <div class="contact-cta">
+      <a class="btn btn-wa" href="https://wa.me/972505068999"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 1 1 12 20z"/></svg>וואטסאפ — 050-506-8999</a>
+      <a class="btn btn-navy" href="mailto:a.even7@gmail.com">שליחת מייל</a>
+    </div>
+    <p class="contact-alt">או ישירות: <a href="tel:0505068999">050-506-8999</a> · <a href="mailto:a.even7@gmail.com">a.even7@gmail.com</a></p>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <img src="assets/aeven-mark.png" alt="A.Even">
+  <p><strong>A.Even Management Tools</strong> · כלים ניהוליים לעסקים קטנים</p>
+  <p style="margin-top:8px"><a href="index.html">go4tor — ניהול תורים</a> · <a href="https://wa.me/972505068999">וואטסאפ</a> · <a href="mailto:a.even7@gmail.com">מייל</a> · <a href="privacy.html">פרטיות</a></p>
+  <p style="margin-top:10px;font-size:13px;opacity:.7">© <span id="yr"></span> A.Even Management Tools — כל הזכויות שמורות</p>
+</div></footer>
+
+<script>
+(function(){var it=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){it.forEach(function(i){i.classList.add('in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});it.forEach(function(i){io.observe(i);});})();
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body></html>
