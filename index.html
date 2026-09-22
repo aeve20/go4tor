@@ -249,9 +249,18 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
 .phone-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#123E6F,#0C2F52);color:#8FA6BC;font-size:14px;text-align:center;padding:20px}
 @media(max-width:760px){.video-wrap{grid-template-columns:1fr;gap:30px}.video-copy{text-align:center}.video-copy .vsub{justify-content:center}}
 
+/* ───────── נגישות ───────── */
+.skip-link{position:absolute;top:-70px;inset-inline-start:12px;z-index:200;background:var(--navy-deep);color:#fff;padding:12px 22px;border-radius:0 0 12px 12px;font-family:'Rubik',sans-serif;font-weight:600;text-decoration:none;transition:top .15s ease}
+.skip-link:focus{top:0}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:3px}
+summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+main:focus{outline:none}
+
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">דלג לתוכן הראשי</a>
 
 <nav class="nav">
   <div class="wrap nav-in">
@@ -282,6 +291,8 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
   </div>
 </header>
 
+<main id="main" tabindex="-1">
+
 <!-- THE differentiator, immediately -->
 <section class="diff sec" id="why">
   <div class="wrap">
@@ -292,22 +303,22 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
     </div>
     <div class="diff-grid">
       <div class="dcard orange rv">
-        <div class="dic"><svg viewBox="0 0 24 24"><path d="M12 3l2 4 4.5.6-3.2 3.1.8 4.4L12 13l-4 2.1.8-4.4L5.6 7.6 10 7z" opacity="0"/><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+        <div class="dic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 3l2 4 4.5.6-3.2 3.1.8 4.4L12 13l-4 2.1.8-4.4L5.6 7.6 10 7z" opacity="0"/><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
         <h3>הטמעה וליווי צמוד</h3>
         <p>אנחנו מלמדים אותך ואת הלקוחות שלך להשתמש, צעד־צעד — עד שהמערכת רצה מעצמה.</p>
       </div>
       <div class="dcard teal rv">
-        <div class="dic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></div>
+        <div class="dic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></div>
         <h3>כרזה מעוצבת עם QR</h3>
         <p>כרזה מקצועית עם הלוגו שלך וקוד QR שמוביל להזמנת תור — מוכנה לתלייה ולרשתות.</p>
       </div>
       <div class="dcard navy rv">
-        <div class="dic"><svg viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0 0 6"/><rect x="3" y="8" width="12" height="6" rx="1"/><path d="M18 5l3-2v18l-3-2"/></svg></div>
+        <div class="dic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0 0 6"/><rect x="3" y="8" width="12" height="6" rx="1"/><path d="M18 5l3-2v18l-3-2"/></svg></div>
         <h3>סרטון תדמית לרשתות</h3>
         <p>סרטון להשקת האפליקציה שלך ברשתות החברתיות — כדי שהלקוחות ידעו ויתחילו לקבוע לבד.</p>
       </div>
       <div class="dcard blue rv">
-        <div class="dic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="dic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>תמיכה שלא נעלמת</h3>
         <p>אנחנו זמינים בוואטסאפ לכל שאלה, גם חודשים אחרי ההקמה. שותף אמיתי, לא ספק חד־פעמי.</p>
       </div>
@@ -339,12 +350,12 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
   <div class="wrap">
     <div class="sec-head rv"><span class="eyebrow">המערכת עצמה</span><h2>כל מה שצריך כדי לנהל את היום — <span>במסך אחד</span></h2><p>נגיש מהטלפון הנייד שלך, מטאבלט של העסק או מהמחשב. בעברית מלאה, בלי אפליקציה להוריד.</p></div>
     <div class="feats">
-      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>עמוד הזמנה ממותג</h3><p>הלוגו שלך, השירותים, המחירים ושעות הפעילות. נראה כמו אפליקציה של העסק — והלקוח קובע בשתי לחיצות.</p></div></div>
-      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 10h3M8 14h6"/></svg></div><div><h3>יומן חכם</h3><p>כל התורים של היום במסך אחד. אישור, שינוי או ביטול בלחיצה — גם באמצע יום עמוס.</p></div></div>
-      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></div><div><h3>תזכורות אוטומטיות</h3><p>הלקוח מקבל תזכורת לפני התור — פחות ששוכחים, פחות כיסא ריק, פחות כסף שהולך לאיבוד.</p></div></div>
-      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 4.5a3.2 3.2 0 0 1 0 6.3"/></svg></div><div><h3>כרטיס לקוח</h3><p>היסטוריית ביקורים, השירות הקבוע, והלקוחות הכי שווים. לקוח בעייתי? אפשר לחסום.</p></div></div>
-      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>ניווט וביקורות</h3><p>כפתור ניווט ישיר לעסק וכפתור לביקורת בגוגל — כדי שהדירוג שלך יעלה מעצמו.</p></div></div>
-      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 18z"/></svg></div><div><h3>וואטסאפ בלחיצה</h3><p>לקוח שצריך משהו חריג מגיע ישר אליך, בלי לחפש מספר. כל השאר קובעים לבד.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>עמוד הזמנה ממותג</h3><p>הלוגו שלך, השירותים, המחירים ושעות הפעילות. נראה כמו אפליקציה של העסק — והלקוח קובע בשתי לחיצות.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 10h3M8 14h6"/></svg></div><div><h3>יומן חכם</h3><p>כל התורים של היום במסך אחד. אישור, שינוי או ביטול בלחיצה — גם באמצע יום עמוס.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></div><div><h3>תזכורות אוטומטיות</h3><p>הלקוח מקבל תזכורת לפני התור — פחות ששוכחים, פחות כיסא ריק, פחות כסף שהולך לאיבוד.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 4.5a3.2 3.2 0 0 1 0 6.3"/></svg></div><div><h3>כרטיס לקוח</h3><p>היסטוריית ביקורים, השירות הקבוע, והלקוחות הכי שווים. לקוח בעייתי? אפשר לחסום.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>ניווט וביקורות</h3><p>כפתור ניווט ישיר לעסק וכפתור לביקורת בגוגל — כדי שהדירוג שלך יעלה מעצמו.</p></div></div>
+      <div class="feat rv"><div class="feat-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 18z"/></svg></div><div><h3>וואטסאפ בלחיצה</h3><p>לקוח שצריך משהו חריג מגיע ישר אליך, בלי לחפש מספר. כל השאר קובעים לבד.</p></div></div>
     </div>
   </div>
 </section>
@@ -388,17 +399,17 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
       <p>כדי שהמעבר לתורים אונליין יצליח באמת, אנחנו לא רק נותנים מערכת — אנחנו עוזרים לך להשיק אותה ללקוחות. זה מה שכלול למצטרפים בתקופת ההשקה:</p>
       <div class="launch-grid">
         <div class="litem">
-          <div class="lic"><svg viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0 0 6"/><rect x="3" y="8" width="12" height="6" rx="1"/><path d="M18 5l3-2v18l-3-2"/></svg></div>
+          <div class="lic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0 0 6"/><rect x="3" y="8" width="12" height="6" rx="1"/><path d="M18 5l3-2v18l-3-2"/></svg></div>
           <h3>סרטון תדמית לרשתות</h3>
           <p>אנחנו מכינים לך סרטון להשקת אפליקציית התורים, מסרטונים קצרים של העסק שאתה מצלם ושולח לנו — בלי צורך שנגיע פיזית, מכל מקום בארץ.</p>
         </div>
         <div class="litem">
-          <div class="lic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></div>
+          <div class="lic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></div>
           <h3>כרזה מעוצבת + QR</h3>
           <p>כרזה עם הלוגו שלך וקוד QR להזמנת תור — לתלייה בעסק, למדבקה ולפרסום ברשתות החברתיות.</p>
         </div>
         <div class="litem">
-          <div class="lic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+          <div class="lic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/><path d="M12 8v4l3 2"/></svg></div>
           <h3>ליווי הטמעה מלא</h3>
           <p>נוסח מוכן ללקוחות, הדרכה מסך־מסך, ותמיכה ישירה בוואטסאפ — עד שהמערכת חלק מהשגרה שלך.</p>
         </div>
@@ -439,13 +450,15 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
       <h2>חודש ראשון חינם, <span>בלי התחייבות</span></h2>
       <p>שלח הודעה ונחזור אליך באותו יום. השיחה הראשונה היא בירור קצר — בלי מכירות ובלי לחץ.</p>
       <div class="contact-cta">
-        <a class="btn btn-wa" href="https://wa.me/972505068999?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91-go4tor"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4H8c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.3-.6z"/></svg>וואטסאפ — 050-506-8999</a>
-        <a class="btn btn-navy" href="mailto:a.even7@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>שליחת מייל</a>
+        <a class="btn btn-wa" href="https://wa.me/972505068999?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91-go4tor"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4H8c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.3-.6z"/></svg>וואטסאפ — 050-506-8999</a>
+        <a class="btn btn-navy" href="mailto:a.even7@gmail.com"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>שליחת מייל</a>
       </div>
       <p class="contact-alt">או ישירות: <a href="tel:0505068999">050-506-8999</a> · <a href="mailto:a.even7@gmail.com">a.even7@gmail.com</a></p>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="foot">
   <div class="wrap">
@@ -479,5 +492,6 @@ details p{padding:0 22px 21px;color:var(--ink-soft);font-size:16px}
 (function(){var it=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){it.forEach(function(i){i.classList.add('in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});it.forEach(function(i){io.observe(i);});})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
+<script src="accessibility.js" defer></script>
 </body>
 </html>
