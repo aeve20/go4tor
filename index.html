@@ -492,6 +492,6 @@ main:focus{outline:none}
 (function(){var it=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){it.forEach(function(i){i.classList.add('in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});it.forEach(function(i){io.observe(i);});})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
-<script src="accessibility.js" defer></script>
+<script src="accessibility.js?v=2" defer></script>
 </body>
 </html>
