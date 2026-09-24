@@ -2,6 +2,7 @@
  * go4tor — תפריט נגישות
  * מותאם לתקן ישראלי ת"י 5568 (WCAG 2.0 AA)
  * קובץ עצמאי: מזריק כפתור, תפריט וסגנונות. אין תלות בספריות חיצוניות.
+ * גרסה 2 — הפאנל נסתר לחלוטין כברירת מחדל; נפתח רק בלחיצה על הסמל.
  * שימוש: הוסף לכל עמוד לפני סגירת </body>:
  *   <script src="accessibility.js" defer></script>
  */
@@ -63,9 +64,11 @@
     /* הפאנל */
     "#a11y-panel{position:fixed;top:0;inset-inline-start:0;height:100%;width:330px;max-width:88vw;",
     "background:#fff;color:var(--a11y-navy);z-index:2147483002;box-shadow:2px 0 24px rgba(0,0,0,.25);",
-    "transform:translateX(-105%);transition:transform .25s ease;overflow-y:auto;direction:rtl;",
+    /* נסתר לחלוטין כברירת מחדל — לא מוזז בלבד אלא ממש לא נוכח, כדי שלא יסתיר את המסך גם אם ה-JS מתעכב */
+    "transform:translateX(-105%);visibility:hidden;pointer-events:none;",
+    "transition:transform .25s ease,visibility .25s ease;overflow-y:auto;direction:rtl;",
     "font-family:'Rubik','Segoe UI',Arial,sans-serif;font-size:16px;line-height:1.5;}",
-    "#a11y-panel.open{transform:translateX(0);}",
+    "#a11y-panel.open{transform:translateX(0);visibility:visible;pointer-events:auto;}",
     "#a11y-panel *{box-sizing:border-box;}",
 
     "#a11y-head{background:var(--a11y-navy);color:#fff;padding:18px 20px;display:flex;",
